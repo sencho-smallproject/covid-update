@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body%}
+
+ <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Date</th>
+        <th>Total Probable Cases</th>
+        <th>Total Confirmed Cases</th>
+        <th>Total Deaths</th>
+        <th>Reproductive Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in datas %}
+      <tr>
+        <td>{{ i['date'] }}</td>
+        <td>{{ i['totalProbableCases'] }}</td>
+        <td>{{ i['totalConfirmedCases'] }}</td>
+        <td>{{ i['totalDeaths'] }}</td>
+        <td>{{ i['r0'] }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
